@@ -1,6 +1,7 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: [ 'build', '--build-arg','PORT=${_PORT}','-t', '${_LOCATION}-docker.pkg.dev/${PROJECT_ID}/${_REPOSITORY}/${_IMAGE}', '.' ]
+timeout: 900s
 substitutions:
   _PORT: '8080'
   _LOCATION: us-central1
