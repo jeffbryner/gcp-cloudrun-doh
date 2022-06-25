@@ -1,11 +1,23 @@
 
 # GCP-CloudRun-DOH
 
-Based on this kickstarter project : https://github.com/jeffbryner/gcp-cloudrun-pipeline, a quick DNS over HTTPS proxy hosted in cloudrun
+Based on this kickstarter project : https://github.com/jeffbryner/gcp-cloudrun-pipeline, and https://github.com/jeffbryner/doh-server-container  here's a quick DNS over HTTPS proxy hosted in cloudrun
 
 ## Why?
 
 I like the idea of DOH, and even better self-hosted!
+
+Fill out some variables (orgid, etc), terraform apply and you have your own DOH service hosted in GCP that you can query and use in Firefox, etc:
+
+```bash
+curl -s -H 'accept: application/dns-message' 'https://cloudrun-srv-abcd123-uc.a.run.app/dns-query?dns=rmUBAAABAAAAAAAAB2NhcmVlcnMHb3BlbmRucwNjb20AAAEAAQ' | hexdump -C
+00000000  ae 65 81 80 00 01 00 01  00 00 00 01 07 63 61 72  |.e...........car|
+00000010  65 65 72 73 07 6f 70 65  6e 64 6e 73 03 63 6f 6d  |eers.opendns.com|
+00000020  00 00 01 00 01 c0 0c 00  01 00 01 00 00 0b 7a 00  |..............z.|
+00000030  04 d0 43 da 02 00 00 29  02 00 00 00 00 00 00 04  |..C....)........|
+00000040  00 0c 00 00                                       |....|
+00000044
+```
 
 
 ## Setup
