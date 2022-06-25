@@ -5,7 +5,7 @@ Based on this kickstarter project : https://github.com/jeffbryner/gcp-cloudrun-p
 
 ## Why?
 
-I like the idea of DOH, and even better self-hosted!
+I like the idea of DOH, and even better if it is self-hosted!
 
 Fill out some variables (orgid, etc), terraform apply and you have your own DOH service hosted in GCP that you can query and use in Firefox, etc:
 
