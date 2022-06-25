@@ -17,7 +17,6 @@
 #
 # The Cloud Build configs can be found under the /cicd/configs/ sub-folder.
 
-
 terraform {
   required_version = ">=0.14"
   required_providers {
