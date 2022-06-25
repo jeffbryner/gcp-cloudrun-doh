@@ -81,6 +81,9 @@ resource "google_cloud_run_service" "default" {
           name  = "NA"
           value = "NA"
         }
+        ports {
+          container_port = 3000
+        }
       }
     }
   }
