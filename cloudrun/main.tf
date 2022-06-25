@@ -45,7 +45,7 @@ cloud build container
 
 resource "null_resource" "cloudbuild_cloudrun_container" {
   triggers = {
-    always_run = "${timestamp()}"
+    file_changed = filesha512("./container/Dockerfile")
   }
 
   provisioner "local-exec" {
